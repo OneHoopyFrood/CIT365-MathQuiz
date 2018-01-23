@@ -22,7 +22,7 @@ namespace MathQuiz
         private int multiplicand;
         private int multiplier;
         private int dividend;
-        private decimal divisor;
+        private int divisor;
 
         int timeLeft;
 
@@ -33,7 +33,7 @@ namespace MathQuiz
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            currentDate.Text = DateTime.Now.ToString("dd MMM yyyy");
         }
 
         public void StartTheQuiz()
@@ -48,9 +48,9 @@ namespace MathQuiz
             multiplicand = rand.Next(2, 11);
             multiplier = rand.Next(2, 11);
             // Divide
-            dividend = rand.Next(2, 11);
+            divisor = rand.Next(2, 11);
             int tempQuotient = rand.Next(2, 11);
-            divisor = dividend * tempQuotient;
+            dividend = divisor * tempQuotient;
 
             // Put the values on display
             plusLeftLabel.Text = add1.ToString();
